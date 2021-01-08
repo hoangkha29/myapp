@@ -1,0 +1,12 @@
+= form_for @article do |form|
+  %div.form_dk
+    = form.label :title
+    %br/
+    = form.text_field :title, :class => "input-title"
+  %div.form_dk
+    = form.label :body
+    %br/
+    = form.text_area :body
+    %br/
+  %div
+    = form.submit

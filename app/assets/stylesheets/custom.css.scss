@@ -1,0 +1,94 @@
+$navbar-default-bg: black;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body{
+  margin: 40px;
+  color: #262626;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #212121;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+#logo:hover {
+  color: #666666;
+  text-decoration: none;
+}
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.article-body {
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.article-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+}
+.description {
+  margin-top: 0;
+}
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+h1.blog-title {
+  font-size: 380%;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 10px;
+  display: block;
+  line-height: 90%;
+  display: block;
+  max-width: 1200px;
+  text-align: center;
+}
+
+div.form_dk{
+  margin-bottom: 20px;
+}
+
+.input-group{
+  margin-bottom: 20px;
+}
+
+.input-title{
+  width: 555px;
+}
+
+textarea{
+  width: 555px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 203px;
+}
+
+.main{
+  margin: auto;
+  max-width: 800px;
+}
+
+.btn {
+  float: left;
+  margin-right: 7px;
+}
+
+.comment-thread.root {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: #f6f6f7;
+  border-radius: 3px;
+  border: 1px solid #d6d6d7;
+}

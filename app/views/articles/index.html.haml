@@ -1,0 +1,12 @@
+%h1.blog-title List Article
+.main
+  = button_to "New Article", new_article_path , method: :get, :class => "btn btn-primary"
+  %br/
+  %br/
+  %br/
+  -#%h2{:style => "font-size: 100%; margin-top: 0; padding-top: 0; padding-bottom: 20px;"} Latest
+  - @articles.each do |article|
+    %h3
+      = link_to article.title, article
+    %p{:style => "margin-bottom: 55px;"}= article.body
+  %p.text-center= link_to "View more"

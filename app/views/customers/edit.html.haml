@@ -1,0 +1,13 @@
+%h1 Edit Customer
+= form_for @Customer do |cus|
+  %div
+    = cus.label "First Name"
+    %br/
+    = cus.text_field :contactFirstName
+  %div
+    = cus.label "Last Name"
+    %br/
+    = cus.text_area :contactLastName
+    %br/
+  %div
+    = cus.submit
