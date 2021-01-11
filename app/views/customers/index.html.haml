@@ -1,9 +1,10 @@
-%table.table.table-hover
-  %tr
+%table.table.table-hover.container
+  %thead.table-dark
     %th #
     %th FirstName
     %th LastName
     %th Phone
+    %th
   - @Customer.each do |cus|
     %tr
       %th= cus.customerNumber

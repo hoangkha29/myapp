@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.all.limit(3)
   end
 
   def show
@@ -42,6 +42,10 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to root_path
+  end
+
+  def viewmore
+    @article = Article.find
   end
 
   private

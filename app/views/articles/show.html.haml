@@ -9,6 +9,7 @@
   %br/
   .comment
     %h2 Comments
-    = render @article.comments
+    .div-create= render @article.comments
     %h3 Add a comment:
-    = render 'comments/form'
+    .ajax-form-create= render 'comments/form'
+

@@ -9,4 +9,6 @@
     %h3
       = link_to article.title, article
     %p{:style => "margin-bottom: 55px;"}= article.body
-  %p.text-center= link_to "View more"
+  %p.text-center#view-more= link_to "View More", :remote => true
+  %p.result
+

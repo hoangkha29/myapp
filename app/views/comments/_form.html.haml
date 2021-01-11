@@ -1,4 +1,5 @@
-= form_for [@article, @article.comments.build] do |form|
+
+= form_for [@article, @article.comments.build], remote: true do |form|
   %p
     = form.label :commenter
     %br/
@@ -6,6 +7,6 @@
   %p
     = form.label :body
     %br/
-    = form.text_area :body
+    = form.text_area :body, placeholder: "Nhập Nội Dung Cho Comment."
   %p
     = form.submit
