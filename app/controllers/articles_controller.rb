@@ -1,6 +1,16 @@
 class ArticlesController < ApplicationController
+
   def index
-    @articles = Article.all.limit(3)
+      # if params[:id]
+      #   @articles = Article.where('id < ?', params[:id]).limit(3)
+      # else
+      #   @articles = Article.all
+      # end
+      # respond_to do |format|
+      #   format.html
+      #   format.js
+      # end
+      @articles = Article.all
   end
 
   def show
@@ -44,9 +54,17 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
-  def viewmore
-    @article = Article.find
-  end
+  # def viewmore
+  #   if params[:id]
+  #     @articles = Article.where('id < ?', params[:id]).limit(3)
+  #   else
+  #     @articles = @articles.limit(3)
+  #   end
+  #   respond_to do |format|
+  #     format.html
+  #     format.js
+  #   end
+  # end
 
   private
   def article_params

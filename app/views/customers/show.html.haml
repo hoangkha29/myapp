@@ -1,21 +1,24 @@
-%label{:for => ""} FirstName:
-%strong= @Customer.contactFirstName
-%br/
-%label{:for => ""} LastName:
-%strong= @Customer.contactLastName
-%br/
-%label{:for => ""} Phone:
-%strong= @Customer.phone
-%br/
-%label{:for => ""} Address:
-%strong= @Customer.addressLine1
-%br/
-%label{:for => ""} City:
-%strong= @Customer.city
-%br/
-%label{:for => ""} State:
-%strong= @Customer.state
-%br/
-%label{:for => ""} Country:
-%strong= @Customer.country
-%br/
+.main
+  %label FirstName:
+  %strong= @Customer.contactFirstName
+  %br/
+
+  %label LastName:
+  %strong= @Customer.contactLastName
+  %br/
+
+  %label Phone:
+  %strong= @Customer.phone
+  %br/
+
+  %label Company Name:
+  %strong= @Customer.customerName
+  %br/
+
+  %label City:
+  %strong= @Customer.city
+  %br/
+
+  %label Country:
+  %strong= @Customer.country
+  %br/

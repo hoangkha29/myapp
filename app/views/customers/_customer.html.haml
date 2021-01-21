@@ -1,0 +1,17 @@
+%table.table.table-hover.container
+  %thead.table-dark
+    %th #
+    %th FirstName
+    %th LastName
+    %th Phone
+    %th
+  - @Customer.each do |cus|
+    %tr.customer{"data-id" => "#{cus.id}"}
+      %th= cus.customerNumber
+      %td= cus.contactFirstName
+      %td= cus.contactLastName
+      %td= cus.phone
+      %td
+        = button_to "Edit", edit_customer_path(cus) , :method => :get, :class => "btn btn-primary"
+        = button_to "Delete", cus , :method => :delete, :class => "btn btn-danger", data: { confirm: "Are you sure?" }
+        = button_to "Detail", cus , :method => :get, :class => "btn btn-light"

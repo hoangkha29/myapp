@@ -23,6 +23,8 @@
               %a.dropdown-item{:href => "#"} Something else here
         %li.nav-item
           %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
-      %form.d-flex
-        %input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
-        %button.btn.btn-outline-success{:type => "submit"} Search
+      = form_tag(customers_path, method: :get, :class => "d-flex") do
+        = text_field_tag :s, params[:s], class: "form-control me-2", :type => "Search"
+        = submit_tag 'Search', :class => "btn btn-outline-success"
+        -#%input.form-control.me-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+        -#%button.btn.btn-outline-success{:type => "submit"} Search

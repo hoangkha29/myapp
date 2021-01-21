@@ -1,17 +1,10 @@
-%table.table.table-hover.container
-  %thead.table-dark
-    %th #
-    %th FirstName
-    %th LastName
-    %th Phone
-    %th
-  - @Customer.each do |cus|
-    %tr
-      %th= cus.customerNumber
-      %td= cus.contactFirstName
-      %td= cus.contactLastName
-      %td= cus.phone
-      %td
-        = button_to "Edit", edit_customer_path(cus) , :method => :get, :class => "btn btn-primary"
-        = button_to "Delete", cus , :method => :delete, :class => "btn btn-danger", data: { confirm: "Are you sure?" }
-        = button_to "Detail", cus , :method => :get, :class => "btn btn-light"
+.container
+  = button_to "New Customer", new_customer_path, :method => :get, :class => "btn btn-primary"
+%br
+%br
+%br
+  = render "customers/customer"
+
+.container= paginate @Customer, theme: 'twitter-bootstrap-3'
+
+-#%p.text-center#view-more= link_to "View More", "#", :onclick => 'viewCustomer()', :remote => true

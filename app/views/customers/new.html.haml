@@ -1,0 +1,8 @@
+.main
+  %h1.blog-title New Customer
+  - if @Customer.errors.any?
+    %h2 The following errors prevented the article from saving:
+    %ul
+      - @Customer.errors.full_messages.each do |msg|
+        %li= msg
+  = render "form", customer: @Customer

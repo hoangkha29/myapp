@@ -7,6 +7,15 @@ gem 'mini_racer'
 gem "haml-rails"
 gem 'autoprefixer-rails'
 
+# Pagination
+gem 'kaminari'
+gem 'ransack'
+gem 'bootstrap-kaminari-views'
+# gem 'kaminari-mongoid'
+# gem 'kaminari-actionview'
+
+gem 'responders', '~> 2.4.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'
 # Use mysql as the database for Active Record

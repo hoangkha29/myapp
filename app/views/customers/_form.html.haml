@@ -1,0 +1,35 @@
+= form_for @Customer do |cus|
+  %div.form_dk
+    = cus.label "ID"
+    %br/
+    = cus.text_field :customerNumber
+  %div.form_dk
+    = cus.label "Company Name"
+    %br/
+    = cus.text_field :customerName
+  %div.form_dk
+    = cus.label "First Name"
+    %br/
+    = cus.text_field :contactFirstName
+  %div.form_dk
+    = cus.label "Last Name"
+    %br/
+    = cus.text_field :contactLastName
+    %br/
+  %div.form_dk
+    = cus.label "Phone"
+    %br/
+    = cus.text_field :phone
+    %br/
+  %div.form_dk
+    = cus.label "City"
+    %br/
+    = cus.text_field :city
+    %br/
+  %div.form_dk
+    = cus.label "Country"
+    %br/
+    = cus.text_field :country
+    %br/
+  %div
+    = cus.submit

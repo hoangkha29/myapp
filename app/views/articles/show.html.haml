@@ -1,6 +1,8 @@
 %h1.blog-title= @article.title
 .main
   %article
+    %div.post-meta
+      %i.updateTime= @article.created_at.strftime("%b %d,%Y")
     %p{:style => "margin-bottom: 55px;"}= @article.body
     = button_to "Edit", edit_article_path(@article) , method: :get, :class => "btn btn-primary"
     = button_to "Delete", @article , method: :delete, :class => "btn btn-danger", data: { confirm: "Are you sure?" }

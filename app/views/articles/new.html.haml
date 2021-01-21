@@ -2,7 +2,7 @@
   %h1.blog-title New Article
   - if @article.errors.any?
     %h2 The following errors prevented the article from saving:
-    %ul
+    %ul.alert.alert-danger
       - @article.errors.full_messages.each do |msg|
         %li= msg
   = render "form", article: @article

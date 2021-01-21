@@ -1,6 +1,30 @@
 class CustomersController < ApplicationController
   def index
-    @Customer= Customer.all
+    # @Customer= Customer.all.page(params[:page])
+
+    @Customer = if params[:s]
+               Customer.where('contactFirstName LIKE ?', "%#{params[:s]}%").page(params[:page])
+               else
+               @Customer= Customer.all.page(params[:page]).per(10)
+                end
+  end
+
+  def new
+    @Customer = Customer.new
+  end
+
+  def create
+    # get new customer with customer params
+    @Customer = Customer.new(customer_params)
+
+    # if create new
+    if @Customer.save
+      # notice
+      flash[:notice] = "New Customer was successfully created"
+      redirect_to @Customer
+    else
+      render :new
+    end
   end
 
   def show
@@ -26,11 +50,11 @@ class CustomersController < ApplicationController
     @Customer = Customer.find(params[:id])
     @Customer = Customer.destroy(params[:id])
 
-    redirect_to root_path
+    redirect_to customers_path
   end
 
   private
   def customer_params
-    params.require(:customer).permit(:contactFirstName, :contactLastName)
+    params.require(:customer).permit(:customerNumber, :customerName, :contactFirstName, :contactLastName, :phone, :city, :country, :term )
   end
 end

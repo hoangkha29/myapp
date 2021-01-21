@@ -30,10 +30,38 @@ ActiveRecord::Schema.define(version: 20210105094221) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
-  create_table "customers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "customers", primary_key: "customerNumber", force: :cascade do |t|
+    t.string "customerName",     limit: 50, null: false
+    t.string "contactLastName",  limit: 50, null: false
+    t.string "contactFirstName", limit: 50, null: false
+    t.string "phone",            limit: 50, null: false
+    t.string "city",             limit: 50, null: false
+    t.string "country",          limit: 50, null: false
   end
+
+  create_table "offices", primary_key: "officeCode", force: :cascade do |t|
+    t.string "city",         limit: 50, null: false
+    t.string "phone",        limit: 50, null: false
+    t.string "addressLine1", limit: 50, null: false
+    t.string "addressLine2", limit: 50
+    t.string "state",        limit: 50
+    t.string "country",      limit: 50, null: false
+    t.string "postalCode",   limit: 15, null: false
+    t.string "territory",    limit: 10, null: false
+  end
+
+  create_table "products", primary_key: "productCode", force: :cascade do |t|
+    t.string  "productName",        limit: 70,                             null: false
+    t.string  "productLine",        limit: 50,                             null: false
+    t.string  "productScale",       limit: 10,                             null: false
+    t.string  "productVendor",      limit: 50,                             null: false
+    t.text    "productDescription", limit: 65535,                          null: false
+    t.integer "quantityInStock",    limit: 2,                              null: false
+    t.decimal "buyPrice",                         precision: 10, scale: 2, null: false
+    t.decimal "MSRP",                             precision: 10, scale: 2, null: false
+  end
+
+  add_index "products", ["productLine"], name: "productLine", using: :btree
 
   add_foreign_key "comments", "articles"
 end

@@ -5,10 +5,9 @@
   %br/
   %br/
   -#%h2{:style => "font-size: 100%; margin-top: 0; padding-top: 0; padding-bottom: 20px;"} Latest
-  - @articles.each do |article|
-    %h3
-      = link_to article.title, article
-    %p{:style => "margin-bottom: 55px;"}= article.body
-  %p.text-center#view-more= link_to "View More", :remote => true
-  %p.result
-
+  .container
+    = render 'articles/article'
+  .result
+  -# = paginate @article
+  %p.text-center#view-more= link_to "View More", "#", :onclick => 'viewMore()', :remote => true
+  -#%p.result
