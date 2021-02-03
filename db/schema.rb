@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210105094221) do
+ActiveRecord::Schema.define(version: 20210125083823) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -26,9 +26,16 @@ ActiveRecord::Schema.define(version: 20210105094221) do
     t.integer  "article_id", limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "status",     limit: 255
   end
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
+
+  create_table "countries", force: :cascade do |t|
+    t.string "countrycode", limit: 255
+    t.text   "countryname", limit: 65535
+    t.string "code",        limit: 255
+  end
 
   create_table "customers", primary_key: "customerNumber", force: :cascade do |t|
     t.string "customerName",     limit: 50, null: false

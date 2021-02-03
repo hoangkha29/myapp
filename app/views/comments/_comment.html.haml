@@ -2,6 +2,12 @@
   %p
     %strong= comment.commenter
   %p= comment.body
+
+  %p.star= comment.status
+  -# - @article.comments.each do |cmt|
+  -#   %p= cmt.status
+  -#%p= image_tag ('star.svg'), class: "commentStar"
+  %p.commentStar
   %p
     = link_to 'Delete', [comment.article, comment], |
     method: :delete,                                       |

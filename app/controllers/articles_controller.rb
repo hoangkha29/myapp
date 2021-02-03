@@ -54,18 +54,6 @@ class ArticlesController < ApplicationController
     redirect_to root_path
   end
 
-  # def viewmore
-  #   if params[:id]
-  #     @articles = Article.where('id < ?', params[:id]).limit(3)
-  #   else
-  #     @articles = @articles.limit(3)
-  #   end
-  #   respond_to do |format|
-  #     format.html
-  #     format.js
-  #   end
-  # end
-
   private
   def article_params
     params.require(:article).permit(:title, :body)

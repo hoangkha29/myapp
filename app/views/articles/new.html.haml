@@ -5,4 +5,5 @@
     %ul.alert.alert-danger
       - @article.errors.full_messages.each do |msg|
         %li= msg
-  = render "form", article: @article
+  .form
+    = render "form", article: @article

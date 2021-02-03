@@ -1,13 +1,19 @@
 
-= form_for [@article, @article.comments.build], remote: true do |form|
+= form_for [@article, @article.comments.build], :html => {:class => 'form-comment'}, remote: true do |form|
 
   %p
-    = form.label :commenter
+    = form.label "Name"
     %br/
-    = form.text_field :commenter, require:true
+    = form.text_field :commenter, :id => "comment_name", require:true
+
   %p
-    = form.label :body
+    = form.label "Star: "
+
+    = form.select(:status, options_for_select([['1 sao', '1'], ['2 sao', '2'], ['3 sao', '3'], ['4 sao', '4'], ['5 sao', '5']], ['1 sao', '1']), :id => "comment_status")
+
+  %p
+    = form.label "Comment"
     %br/
-    = form.text_area :body, placeholder: "Nhập Nội Dung Cho Comment.", require:true
+    = form.text_area :body, :id => "comment_content", placeholder: "Please enter your comment.", require:true
   %p
-    = form.submit
+    = form.submit "Create Comment", :id => "commentSub"

@@ -1,10 +1,7 @@
 function viewMore(){
-    // alert ("loading...");
-    // let view = document.querySelector("#view-more a")
     let last_id = $('.article').last().attr('data-id');
     console.log(last_id);
     let url = $('.article a').attr('href')
-    // debugger;
     $.ajax({
         type: "GET",
         dateType: "script",
@@ -17,3 +14,16 @@ function viewMore(){
         }
     });
 };
+
+// let star = document.getElementsByClassName('star')
+// console.log(star);
+// var i,j
+// for (i = 0 ; i < star.length; i++) {
+//     let text = ''
+//     for (j = 0 ; j < star[i].innerHTML; j++) {
+//         text += "<img src='/assets/star.svg'>";
+//     }
+//     $('.commentStar')[i].innerHTML = text;
+// }
+
+
